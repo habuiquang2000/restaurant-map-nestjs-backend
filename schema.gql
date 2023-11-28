@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateGraphqlInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Graphql {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Mutation {
+  createGraphql(createGraphqlInput: CreateGraphqlInput!): Graphql!
+  removeGraphql(id: Int!): Graphql!
+  updateGraphql(updateGraphqlInput: UpdateGraphqlInput!): Graphql!
+}
+
+type Query {
+  graphql(id: Int!): Graphql!
+  graphqls: [Graphql!]!
+}
+
+input UpdateGraphqlInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}

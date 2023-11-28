@@ -3,18 +3,16 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import configuration from './a_config/configuration';
 
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+
+import { GraphqlsModule } from './graphql/graphqls.module';
 // import { MulterModule } from '@nestjs/platform-express';
-// import { GraphQLModule } from '@nestjs/graphql';
-// import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 // import { ApisModule } from './apis/apis.module';
 // import { AuthModule } from './auth/auth.module';
 // import { DatabaseModule } from './database/database.module';
-// import { GraphqlsModule } from './graphqls/graphqls.module';
 // import { SocketModule } from './gateway/socket.module';
 // import { UploadsModule } from './uploads/uploads.module';
-
-
-
 
 // // import { APP_GUARD } from '@nestjs/core';
 // // import { JwtAuthGuard } from './auth/guard/jwt-auth.guard';
@@ -28,11 +26,12 @@ import { AppService } from './app.service';
       isGlobal: true,
       envFilePath: '.env',
     }),
-    //     GraphQLModule.forRoot<ApolloDriverConfig>({
-    //       driver: ApolloDriver,
-    //       autoSchemaFile: 'schema.gql',
-    //     }),
-    //     GraphqlsModule,
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: 'schema.gql',
+      sortSchema: true,
+    }),
+    GraphqlsModule,
     //     MulterModule.register({ dest: './uploads' }),
     //     ApisModule,
     //     DatabaseModule,
@@ -56,6 +55,3 @@ export class AppModule {
     // console.log(`MongoDB connected ${this.connection.host}`);
   }
 }
-
-
-
