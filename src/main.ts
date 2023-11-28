@@ -21,3 +21,33 @@ async function bootstrap() {
   getLANInfo(PORT);
 }
 bootstrap();
+
+// import { join } from 'path';
+// import { ValidationPipe } from '@nestjs/common';
+// import { AuthenticatedSocketAdapter } from './gateway/authenticated-socket.adapter';
+// // import { JwtAuthGuard } from './auth/guard/jwt-auth.guard';
+// // import { HttpExceptionFilter } from './utils/http-exception.filter';
+// // import mongoose from 'mongoose';
+
+// // mongoose.set('useFindAndModify', false);
+
+//   // app.setGlobalPrefix('api');
+//   app
+//     .useGlobalFilters
+//     // new FallbackExceptionFilter(),
+//     // new HttpExceptionFilter(),
+//     ();
+//   app.useGlobalPipes(
+//     new ValidationPipe({
+//       // transform: true,
+//       // skipMissingProperties: true,
+//       // whitelist: true,
+//       // forbidNonWhitelisted: true,
+//       // disableErrorMessages: configuration().nodeEnv == 'PRODUCTION',
+//     }),
+//   );
+
+//   // const reflector = new Reflector();
+//   // app.useGlobalGuards(new JwtAuthGuard());
+//   app.useStaticAssets(join(__dirname, '..', 'static'));
+//   app.useWebSocketAdapter(new AuthenticatedSocketAdapter(app)); // Add our custom socket adapter.

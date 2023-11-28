@@ -7,11 +7,12 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 
 import { GraphqlsModule } from './graphql/graphqls.module';
+import { SocketModule } from './gateway/socket.module';
+
 // import { MulterModule } from '@nestjs/platform-express';
 // import { ApisModule } from './apis/apis.module';
 // import { AuthModule } from './auth/auth.module';
 // import { DatabaseModule } from './database/database.module';
-// import { SocketModule } from './gateway/socket.module';
 // import { UploadsModule } from './uploads/uploads.module';
 
 // // import { APP_GUARD } from '@nestjs/core';
@@ -36,7 +37,7 @@ import { AppService } from './app.service';
     //     ApisModule,
     //     DatabaseModule,
     //     AuthModule,
-    //     SocketModule,
+    SocketModule,
     //     UploadsModule,
   ],
   controllers: [AppController],
